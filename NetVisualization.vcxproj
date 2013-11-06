@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{613FF8FF-A4FA-4132-8431-0DDEA40D615D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>NetVisualization</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\acmca_000\Desktop\Projects\NetVisualization\NetVisualization\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BrowseInformation>true</BrowseInformation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalOptions>SDL2.lib SDL2main.lib SDL2_mixer.lib %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>glew32.lib;glew32s.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ImageDataSet.cpp" />
+    <ClCompile Include="ImageDataSetFactory.cpp" />
+    <ClCompile Include="JsonLoader.cpp" />
+    <ClCompile Include="LabelDataSet.cpp" />
+    <ClCompile Include="LabelDataSetFactory.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="SDLManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BaseDataParams.h" />
+    <ClInclude Include="IDataSet.h" />
+    <ClInclude Include="IDataSetFactory.h" />
+    <ClInclude Include="ImageDataParams.h" />
+    <ClInclude Include="ImageDataSet.h" />
+    <ClInclude Include="ImageDataSetFactory.h" />
+    <ClInclude Include="include\begin_code.h" />
+    <ClInclude Include="include\close_code.h" />
+    <ClInclude Include="include\GL\glew.h" />
+    <ClInclude Include="include\GL\glxew.h" />
+    <ClInclude Include="include\GL\wglew.h" />
+    <ClInclude Include="include\rapidjson\document.h" />
+    <ClInclude Include="include\rapidjson\filestream.h" />
+    <ClInclude Include="include\rapidjson\prettywriter.h" />
+    <ClInclude Include="include\rapidjson\rapidjson.h" />
+    <ClInclude Include="include\rapidjson\reader.h" />
+    <ClInclude Include="include\rapidjson\stringbuffer.h" />
+    <ClInclude Include="include\rapidjson\writer.h" />
+    <ClInclude Include="include\SDL.h" />
+    <ClInclude Include="include\SDL_assert.h" />
+    <ClInclude Include="include\SDL_atomic.h" />
+    <ClInclude Include="include\SDL_audio.h" />
+    <ClInclude Include="include\SDL_bits.h" />
+    <ClInclude Include="include\SDL_blendmode.h" />
+    <ClInclude Include="include\SDL_clipboard.h" />
+    <ClInclude Include="include\SDL_config.h" />
+    <ClInclude Include="include\SDL_cpuinfo.h" />
+    <ClInclude Include="include\SDL_endian.h" />
+    <ClInclude Include="include\SDL_error.h" />
+    <ClInclude Include="include\SDL_events.h" />
+    <ClInclude Include="include\SDL_gamecontroller.h" />
+    <ClInclude Include="include\SDL_gesture.h" />
+    <ClInclude Include="include\SDL_haptic.h" />
+    <ClInclude Include="include\SDL_hints.h" />
+    <ClInclude Include="include\SDL_joystick.h" />
+    <ClInclude Include="include\SDL_keyboard.h" />
+    <ClInclude Include="include\SDL_keycode.h" />
+    <ClInclude Include="include\SDL_loadso.h" />
+    <ClInclude Include="include\SDL_log.h" />
+    <ClInclude Include="include\SDL_main.h" />
+    <ClInclude Include="include\SDL_messagebox.h" />
+    <ClInclude Include="include\SDL_mixer.h" />
+    <ClInclude Include="include\SDL_mouse.h" />
+    <ClInclude Include="include\SDL_mutex.h" />
+    <ClInclude Include="include\SDL_name.h" />
+    <ClInclude Include="include\SDL_opengl.h" />
+    <ClInclude Include="include\SDL_opengles.h" />
+    <ClInclude Include="include\SDL_opengles2.h" />
+    <ClInclude Include="include\SDL_pixels.h" />
+    <ClInclude Include="include\SDL_platform.h" />
+    <ClInclude Include="include\SDL_power.h" />
+    <ClInclude Include="include\SDL_quit.h" />
+    <ClInclude Include="include\SDL_rect.h" />
+    <ClInclude Include="include\SDL_render.h" />
+    <ClInclude Include="include\SDL_revision.h" />
+    <ClInclude Include="include\SDL_rwops.h" />
+    <ClInclude Include="include\SDL_scancode.h" />
+    <ClInclude Include="include\SDL_shape.h" />
+    <ClInclude Include="include\SDL_stdinc.h" />
+    <ClInclude Include="include\SDL_surface.h" />
+    <ClInclude Include="include\SDL_system.h" />
+    <ClInclude Include="include\SDL_syswm.h" />
+    <ClInclude Include="include\SDL_test.h" />
+    <ClInclude Include="include\SDL_test_assert.h" />
+    <ClInclude Include="include\SDL_test_common.h" />
+    <ClInclude Include="include\SDL_test_compare.h" />
+    <ClInclude Include="include\SDL_test_crc32.h" />
+    <ClInclude Include="include\SDL_test_font.h" />
+    <ClInclude Include="include\SDL_test_fuzzer.h" />
+    <ClInclude Include="include\SDL_test_harness.h" />
+    <ClInclude Include="include\SDL_test_images.h" />
+    <ClInclude Include="include\SDL_test_log.h" />
+    <ClInclude Include="include\SDL_test_md5.h" />
+    <ClInclude Include="include\SDL_test_random.h" />
+    <ClInclude Include="include\SDL_thread.h" />
+    <ClInclude Include="include\SDL_timer.h" />
+    <ClInclude Include="include\SDL_touch.h" />
+    <ClInclude Include="include\SDL_types.h" />
+    <ClInclude Include="include\SDL_version.h" />
+    <ClInclude Include="include\SDL_video.h" />
+    <ClInclude Include="JsonLoader.h" />
+    <ClInclude Include="LabelDataSet.h" />
+    <ClInclude Include="LabelDataSetFactory.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="SDLManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lib\libogg-0.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="lib\glew32.lib" />
+    <Library Include="lib\glew32s.lib" />
+    <Library Include="lib\SDL2.lib" />
+    <Library Include="lib\SDL2main.lib" />
+    <Library Include="lib\SDL2test.lib" />
+    <Library Include="lib\SDL2_mixer.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="NetVisualization.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,18 @@
+{
+	"set1":{
+		"datatype":"imageset",
+		"x":0,
+		"y":0,
+		"xSize":200,
+		"ySize":200,
+		"imagePath":"pictures"
+	},
+	"set2":{
+		"datatype":"imageset",
+		"x":0,
+		"y":0,
+		"xSize":500,
+		"ySize":500,
+		"imagePath":"pictures2"	
+	}
+}
