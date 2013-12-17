@@ -18,7 +18,9 @@ ImageDataSet* ImageDataSetFactory::createObject(jsonData& objectParams) const
 		objectParams.HasMember("y") && objectParams["y"].IsInt() &&
 		objectParams.HasMember("xSize") && objectParams["xSize"].IsInt() &&
 		objectParams.HasMember("ySize") && objectParams["ySize"].IsInt() &&
-		objectParams.HasMember("imagePath") && objectParams["imagePath"].IsString())
+		objectParams.HasMember("imagePath") && objectParams["imagePath"].IsString() &&
+		objectParams.HasMember("firstImageId") && objectParams["firstImageId"].IsInt() &&
+		objectParams.HasMember("filetype") && objectParams["filetype"].IsString())
 	{
 
 		// Sets new image dataset. May cause problem with lost memory
@@ -26,7 +28,9 @@ ImageDataSet* ImageDataSetFactory::createObject(jsonData& objectParams) const
 			objectParams["y"].GetInt(),
 			objectParams["xSize"].GetInt(),
 			objectParams["ySize"].GetInt(),
-			objectParams["imagePath"].GetString());
+			objectParams["imagePath"].GetString(),
+			objectParams["firstImageId"].GetInt(),
+			objectParams["filetype"].GetString());
 	}
 	else
 	{

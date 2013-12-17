@@ -1,7 +1,3 @@
-/*This source code copyrighted by Lazy Foo' Productions (2004-2013)
-and may not be redistributed without written permission.*/
-
-//Using SDL, SDL OpenGL, GLEW, standard IO, file streams, and strings
 #include <stdio.h>
 #include <string>
 #include <fstream>
@@ -54,6 +50,9 @@ int main( int argc, char* args[] )
 
 		// Manage any flags
 		window.manageFlags();
+
+		// TEMP: Sleep for a bit
+		//SDL_Delay(200);
 	}
 
 	// End of program, return success

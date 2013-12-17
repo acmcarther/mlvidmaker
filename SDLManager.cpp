@@ -315,7 +315,8 @@ void SDLManager::update(void)
 {
 	// Get a set iterator
 	std::set<IDataSet*>::iterator itr;
-	bool dataLeft = true, dataProcessed;
+	bool dataLeft = true, dataProcessed = true;
+
 
 	// Tell all of the datasets to update
     for ( itr = dataSets.begin();
@@ -325,7 +326,11 @@ void SDLManager::update(void)
 		 dataProcessed = dataLeft || dataProcessed;
 	}
 
-	// If nothing was processes, assume that all frames are finished?
+	// If nothing was processed, assume that all frames are finished?
+	if (!dataProcessed)
+	{
+		quit = true;
+	}
 
 	// Move to the next frame
 	frameNumber++;
@@ -362,39 +367,19 @@ void SDLManager::render(void)
 	//Clear color buffer
 	glClear( GL_COLOR_BUFFER_BIT );
 	
-	//Render quad
-	if( gRenderQuad )
-	{
-		//Bind program
-		glUseProgram( gProgramID );
-
-		//Enable vertex position
-		glEnableVertexAttribArray( gVertexPos2DLocation );
-
-		//Set vertex data
-		glBindBuffer( GL_ARRAY_BUFFER, gVBO );
-		glVertexAttribPointer( gVertexPos2DLocation, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(GLfloat), NULL );
-
-		//Set index data and render
-		glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, gIBO );
-		glDrawElements( GL_TRIANGLE_FAN, 4, GL_UNSIGNED_INT, NULL );
-
-		//Disable vertex position
-		glDisableVertexAttribArray( gVertexPos2DLocation );
-
-		//Unbind program
-		glUseProgram( NULL );
-	}
+	SDL_Surface* screen = SDL_GetWindowSurface( gWindow );
 
 	// Tell all of the datasets to draw
     for ( itr = dataSets.begin();
           itr != dataSets.end(); itr++ )
 	{
-		  (*itr)->notifyRender();
+		  (*itr)->notifyRender(screen);
 	}
 
+	SDL_UpdateWindowSurface( gWindow );
+
 	//Update screen
-	SDL_GL_SwapWindow( gWindow );
+	//SDL_GL_SwapWindow( gWindow );
 }
 
 void SDLManager::manageFlags()

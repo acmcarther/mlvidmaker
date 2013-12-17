@@ -9,8 +9,8 @@ class SDLManager
 {
 	protected:	
 		// Protected Values
-		static const int SCREEN_WIDTH = 640;
-		static const int SCREEN_HEIGHT = 480;
+		static const int SCREEN_WIDTH = 1280;
+		static const int SCREEN_HEIGHT = 1024;
 		SDL_Window* gWindow;
 		SDL_GLContext gContext;
 		bool gRenderQuad;

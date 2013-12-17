@@ -125,7 +125,7 @@ bool JsonLoader::parseFileToSDL(std::string filepath)
 	rapidjson::PrettyWriter<rapidjson::FileStream> writer(f);
 	jsonDocument.Accept(writer);	// Accept() traverses the DOM and generates Handler events.
 
-	// Return completion
+	// Return completion (this cannot currently return false)
 	return true;
 }
 
